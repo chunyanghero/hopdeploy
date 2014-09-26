@@ -12,6 +12,7 @@ import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 import org.springframework.mock.web.MockServletContext;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.haier.openplatform.hopdeploy.util.CacheNames;
 import com.haier.openplatform.hopdeploy.util.SysconfigInitListener;
@@ -30,6 +31,7 @@ import com.haier.openplatform.test.dbunit.BaseHopTestCase;
 		"classpath*:/spring/cache/spring-cache-security.xml", "classpath*:/spring/security/spring-*.xml",
 		"classpath*:/spring/deploy/spring-*.xml", "classpath*:/spring/portal/spring-portal.xml" })
 @Ignore
+@Transactional
 public class BaseTestCase extends BaseHopTestCase {
 	@Resource
 	protected CacheManager ehcacheManager;
